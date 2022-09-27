@@ -1,0 +1,82 @@
+
+table {
+    max-width: 100%;
+    width: auto;
+    min-width: 720px;
+}
+td, th {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.table-responsive {
+    overflow-x: scroll;
+    max-width: 960px;
+    margin: 25px auto;
+}
+
+div + p {
+    color: red;
+}
+div + p::first-line {
+    font-weight: bold;
+}
+div p {
+    font-weight: bold;
+}
+.test ~ p {
+    font-style: italic;
+}
+h1 {
+    cursor: pointer;
+}
+/* mouse über Link */
+h1:hover {
+    color: rebeccapurple;
+}
+/* nicht besuchte links */
+a:link {
+    color: cyan;
+}
+/* besuchte links */
+a:visited {
+    color: salmon;
+}
+/* über Tastatur angesteuert */
+a:focus {
+    color: chocolate;
+}
+/* während dem klicken */
+a:active {
+    color: red;
+}
+a:target {
+    color: red;
+}
+
+*::selection {
+    background-color: deeppink;
+}
+
+input::placeholder {
+    color: yellow;
+    background-color: black;
+}
+a::before {
+    content: '>';
+    background-image: url('../img/party.png');
+    background-size: 11px auto;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin: 2px;
+    background-position: center left;
+}
+
+a::after {
+    content: '';
+    background-image: url('../img/evil.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 10px;
+    margin: 2px;
+    background-position: center;
+}

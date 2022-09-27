@@ -1,0 +1,49 @@
+@import "../css/styleKontaktformular.css";
+@import "styleTable.css";
+
+/*
+Ich bin ein Kommentar
+über mehrere Zeilen
+*/
+
+* {
+    margin: 0;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+nav {
+    padding: 25px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav li, .formFlex > * {
+    flex: 1 1 250px;
+    background-color: #cccccc;
+}
+
+nav ul.d-flex li {
+    background-color: antiquewhite;
+}
+
+header, .divider {
+    background-image: url('https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80');
+    min-height: 25vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    box-shadow: 1px 1px 6px inset #000;
+}
+article {
+    min-height: 80vh;
+}
+#selectoren > section {
+    max-width: 960px;
+    margin: 25px auto;
+}

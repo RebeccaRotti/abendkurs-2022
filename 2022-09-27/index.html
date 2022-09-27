@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulare</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        article {
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+<nav style="background-color: black;">
+    <ul class="d-flex">
+        <li>
+            <a href="#form">Formular</a>
+        </li>
+        <li>
+            <a href="#tabel">Tabellen</a>
+        </li>
+        <li>
+            <a href="https://codersbay.at" target="_blank">Coders.Bay</a>
+        </li>
+        <li>
+            <a href="https://kulturbanausen.at" title="kultur banausen" target="_blank">Kulturbanausen</a>
+        </li>
+    </ul>
+</nav>
+<header class="d-flex">
+    <h1>Formular & Tabellen Übung</h1>
+</header>
+<main>
+    <article id="form">
+        <!-- Formular -->
+        <form action="" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Part 1</legend>
+                <div class="formFlex">
+                    <label for="BspTextInput">Beispiel Text Input</label>
+                    <input type="text" name="BspTextInput" id="BspTextInput"
+                        placeholder="Gib hier was ein" required>
+                </div>
+                <div class="formFlex">
+                    <label for="BspMailInput">Beispiel Mail Input</label>
+                    <input type="email" name="BspMailInput" id="BspMailInput"
+                           placeholder="Mailadresse notwendig" required>
+                </div>
+                <div class="formFlex">
+                    <label for="BspTelInput">Beispiel Telefon Input</label>
+                    <input type="tel" name="BspTelInput" id="BspTelInput"
+                           placeholder="Telefonnummer" required>
+                </div>
+                <div class="formFlex">
+                    <label for="BspURLInput">Beispiel Link Input</label>
+                    <input type="url" name="BspURLInput" id="BspURLInput"
+                           placeholder="Weblink">
+                </div>
+                <div class="formFlex">
+                    <label for="BspNumberInput">Beispiel Nummer Input</label>
+                    <input type="number" name="BspNumberInput" id="BspNumberInput"
+                    placeholder="setz ne nummer">
+                </div>
+                <div class="formFlex">
+                    <label for="BspColorInput">Beispiel Color</label>
+                    <input type="color" name="BspColorInput" id="BspColorInput">
+                </div>
+                <div class="formFlex">
+                    <label for="BspTextInput2">Beispiel Text Input</label>
+                    <input type="text" name="BspTextInput2" id="BspTextInput2"
+                           value="änder mich haha" readonly>
+                </div>
+                <div class="formFlex">
+                    <label for="BspRangeInput">Range Beispiel</label>
+                    <input type="range" name="BspRangeInput" id="BspRangeInput">
+                </div>
+                <div class="formFlex">
+                    <label for="BspDateInput">Date Beispiel</label>
+                    <input type="date" name="BspDateInput" id="BspDateInput">
+                </div>
+                <div class="formFlex">
+                    <label for="BspTime">Time Beispiel</label>
+                    <input type="time" name="BspTime" id="BspTime">
+                </div>
+                <div class="formFlex">
+                    <label for="BspMonth">Month Beispiel</label>
+                    <input type="month" name="BspMonth" id="BspMonth">
+                </div>
+                <input type="hidden" name="ichVersteckMich" value="">
+                <div class="formFlex">
+                    <label for="BspFile">Fileupload</label>
+                    <input type="file" name="BspFile" id="BspFile">
+                </div>
+
+                <div class="formFlex">
+                    <label for="BspPW">Passwort</label>
+                    <input type="password" name="BspPW" id="BspPW">
+                </div>
+                <div class="formFlex">
+                    <label for="BspSearch">Search</label>
+                    <input type="search" name="BspSearch" id="BspSearch">
+                </div>
+
+                <div class="formFlex">
+                    <div>
+                        <label for="BspRadio1">Radio 1</label>
+                        <input type="radio" id="BspRadio1" name="BspRadio">
+                    </div>
+                    <div>
+                        <input type="radio" id="BspRadio2" name="BspRadio" checked>
+                        <label for="BspRadio2">Radio 2</label>
+                    </div>
+                    <div>
+                        <label for="BspRadio3">Radio 3</label>
+                        <input type="radio" id="BspRadio3" name="BspRadio">
+                    </div>
+                </div>
+
+                <div class="formFlex">
+                    <div>
+                        <label for="CheckboxBsp1">Checkbox 1</label>
+                        <input type="checkbox" id="CheckboxBsp1" name="CheckboxBsp1">
+                    </div>
+                    <div>
+                        <input type="checkbox" id="CheckboxBsp2" name="CheckboxBsp2">
+                        <label for="CheckboxBsp2">Checkbox 2</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="CheckboxBsp3" name="CheckboxBsp3">
+                        <label for="CheckboxBsp3">Checkbox 3</label>
+                    </div>
+                </div>
+
+                <div class="formFlex">
+                    <label for="selectBsp">Select me</label>
+                    <select id="selectBsp" name="selectBsp">
+                        <option value="ich sollte">sein irgendwann</option>
+                        <option value="ein Programmierer">oder so</option>
+                    </select>
+                </div>
+
+                <div class="formFlex">
+                    <label for="BspTextarea">Schreib einen Roman</label>
+                    <textarea name="BspTextarea" id="BspTextarea"></textarea>
+                </div>
+
+                <div class="formFlex">
+                    <input type="text" list="intliste" name="interessen" id="interessen">
+                    <datalist id="intliste">
+                        <option value="Fußball" />
+                        <option value="Handball" />
+                        <option value="Tennis" />
+                        <option value="Klettern" />
+                    </datalist>
+                </div>
+
+
+
+
+                <div class="">
+                    <button type="button">Button</button>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Absenden</button>
+                </div>
+            </fieldset>
+        </form>
+    </article>
+    <div class="divider"></div>
+    <article id="tabel">
+    <!-- Tabelle -->
+        <div class="table-responsive">
+            <table>
+            <thead>
+                <tr>
+                    <th>Tabel Headline 1</th>
+                    <th>Tabel Headline 2</th>
+                    <th>Tabel Headline 3</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Tabel Headline 1</th>
+                    <th>Tabel Headline 2</th>
+                    <th>Tabel Headline 3</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>Table Data Reihe 1 Zelle 1</td>
+                    <td>Table Data Reihe 1 Zelle 2</td>
+                    <td>Table Data Reihe 1 Zelle 3</td>
+                </tr>
+                <tr>
+                    <td>Table Data Reihe 2 Zelle 1</td>
+                    <td colspan="2">Table Data Reihe 2 Zelle 2</td>
+                </tr>
+                <tr>
+                    <td>Table Data Reihe 3 Zelle 1</td>
+                    <td rowspan="2">Table Data Reihe 3 & 4 Zelle 2</td>
+                    <td>Table Data Reihe 3 Zelle 3</td>
+                </tr>
+                <tr>
+                    <td>Table Data Reihe 4 Zelle 1</td>
+                    <td>Table Data Reihe 4 Zelle 3</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+</article>
+    <article id="selectoren">
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+            <div class="test">
+                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+
+                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+            </div>
+            <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+
+            <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+        </section>
+        <section>
+            <span class="test"></span>
+            <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+
+            <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,</p>
+
+        </section>
+    </article>
+</main>
+</body>
+</html>

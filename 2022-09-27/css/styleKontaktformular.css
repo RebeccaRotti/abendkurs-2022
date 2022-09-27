@@ -1,0 +1,50 @@
+
+.formFlex {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+input {
+    padding: 5px;
+    border: 1px solid #cacaca;
+}
+#form {
+    max-width: 960px;
+    margin: 20px auto;
+}
+input[type="email"] {
+    background-color: deeppink;
+}
+/*
+alle a-Elemente die Attribut href besitzenn dessen Attribut mit http beginnt
+ */
+a[href^="https://c"] {
+    color: darkred;
+    text-decoration: none;
+}
+/*
+alle a Elemente, die Attribut mit Namen href besitzen, dessen Attributwert form besitzen
+ */
+a[href*="form"] {
+    font-size: 25px;
+}
+
+/*
+alle a Element, in deren Wert auch kultur vorkommt
+*/
+a[title~="kultur"] {
+    text-decoration: green wavy underline;
+}
+
+tr:nth-child(2n) {
+    background-color: gray;
+}
+tr:hover {
+    background-color: black;
+    color: white;
+}
+h1::first-letter {
+    font-size: 50px;
+}

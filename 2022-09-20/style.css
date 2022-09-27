@@ -1,0 +1,30 @@
+.spanClass {
+    font-style: italic;
+    color: red;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.dFlex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.imgFluid, video {
+    max-width: 100%;
+}
+.dFlex section {
+    flex: 1 1 250px;
+}
+.positionTest {
+    position: relative;
+}
+.positionTest figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .5);
+}
+iframe {
+    width: 100%;
+}
