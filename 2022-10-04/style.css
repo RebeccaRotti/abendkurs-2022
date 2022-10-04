@@ -1,0 +1,165 @@
+.rgbBsp {
+    color: rgb(250, 28, 20);
+}
+.rgbaBsp {
+    color: rgba(250, 28, 20, .5);
+}
+.hexaBsp {
+    color: #FA1E16;
+}
+.hslBsp {
+    color: hsl(2, 96%, 53%);
+}
+.hslaBsp {
+    color: hsl(2, 96%, 53%, .5);
+}
+/**/
+.alkalamiBsp {
+    font-family: 'Alkalami', serif;
+}
+.tangerineBsp {
+    font-family: 'Tangerine', cursive;
+}
+.chBsp {
+    font-size: 1.2ch;
+}
+.emBsp {
+    font-size: 1.2em;
+}
+.exBsp {
+    font-size: 1.2ex;
+}
+.remBsp {
+    font-size: 1.2rem;
+}
+.pxBsp {
+    font-size: 18px;
+}
+.prozBsp {
+    font-size: 140%;
+}
+.vwBsp {
+    font-size: 3vw;
+}
+.vhBsp {
+    font-size: 3vh;
+}
+.calcBsp {
+    font-size: calc(1em + 1vw);
+    text-shadow: #000 2px 1px 3px;
+}
+body {
+    color: chocolate;
+    text-indent: 20px;
+}
+.sanserifBsp {
+    font-family: sans-serif;
+}
+.serifBsp {
+    font-family: serif;
+    font-weight: bold;
+    font-style: italic;
+}
+.monoBsp {
+    font-family: monospace;
+    font-variant: small-caps;
+}
+.cursiveBsp {
+    font-family: cursive;
+    text-transform: uppercase;
+}
+.fantasyBsp {
+    font-family: fantasy;
+    line-height: 2.3;
+    letter-spacing: 4px;
+}
+.systemBsp {
+    font-family: system-ui;
+    text-decoration: line-through;
+}
+@font-face {
+    font-family: 'custom Font';
+    src: url('Anonymous_Pro/AnonymousPro-Regular.ttf') format('truetype');
+}
+.embeddedFont {
+    font-family: 'custom Font';
+    word-spacing: -5px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+li::before {
+    content: ' ';
+    background-image: url('turtle.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+
+.widthBsp {
+    width: 350px;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid;
+    border-radius: 15px;
+    box-shadow: 2px 3px 5px #444 inset;
+    box-sizing: border-box; /* padding + border + content = 350px */
+    /* alternativ => Default => content-box */
+    /* content-box => content = 350px exklusive padding & border */
+}
+.widthBsp p {
+    width: 60%;
+}
+.widthBsp2 {
+    max-width: 350px;
+    width: 100%;
+    min-height: 50vh;
+    border: 1px solid black;
+    padding: 25px;
+    /*
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    box-shadow: 2px 3px 5px #444;
+}
+.widthBsp2 p {
+    width: 60%;
+}
+.hover-1:hover {
+    transform: rotate(5deg);
+}
+.hover-2:hover {
+    transform: scale(1.2);
+}
+.hover-3:hover {
+    transform: translate(20px, 5px);
+}
+.marginBsp {
+    margin: 30px;
+}
+.circleBsp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid indianred;
+}
+.inlineBsp {
+    padding: 5px;
+    margin: 5px;
+    width: 50px;
+}
+.inlineBsp2 {
+    padding: 5px;
+    margin: 5px;
+    width: 50px;
+    display: block;
+    overflow: hidden;
+}
