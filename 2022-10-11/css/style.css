@@ -1,0 +1,42 @@
+header {
+    min-height: 40vh;
+    background: url('bg-image.jpg') no-repeat top/100% 50% fixed;
+    /* ausgeschrieben:
+    background-image: url('bg-image.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100% 50%;
+    background-attachment: fixed;
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+aside {
+    background-image: url('laugh.png'), url('silly.png');
+    background-position: top left, bottom right;
+    background-size: 25px, 35px;
+    background-repeat: no-repeat, repeat-y;
+    min-height: 10vh;
+}
+footer {
+    min-height: 25vh;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,121,121,1) 25%, rgba(197,28,100,1) 50%, rgba(5,175,47,1) 75%, rgba(235,0,255,1) 100%);
+}
+.articleOne {
+    background:
+            radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 50px 0,
+            /*radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,*/
+            radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+            /*radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,*/
+            radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%),
+            radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+            radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%) 50px 50px,
+            radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+    background-color:#63773F;
+    background-size:100px 100px;
+}
+
+main { background-color: #4c96e5; }
+aside { border: 1px solid darkred; }

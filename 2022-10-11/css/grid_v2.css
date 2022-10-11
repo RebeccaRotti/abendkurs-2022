@@ -1,0 +1,15 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "kopf kopf kopf"
+        "seite inhalt inhalt"
+        "seite inhalt inhalt"
+        "fuss fuss fuss";
+    gap: 10px 20px;
+}
+header { grid-area: kopf; }
+main { grid-area: inhalt; }
+aside { grid-area: seite; }
+footer { grid-area: fuss; }
