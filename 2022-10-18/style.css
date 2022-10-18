@@ -1,6 +1,16 @@
+
+:root {
+    --firstColor: #954c4c;
+    --secondColor: #3b3333;
+}
+
+body {
+    background-color: var(--firstColor);
+}
+
 nav {
-    background-color: black;
-    padding: 15px;
+    background-color: var(--secondColor);
+    padding: 15px
 }
 nav ul {
     padding: 0;
@@ -26,7 +36,23 @@ header {
     background-size: cover;
     background-position: center;
 }
+img {
+    max-width: 100%;
+}
+article {
+    margin: 25px auto;
+}
 .navButton { display: none; }
+
+@keyframes blinken {
+    0% { background-color: #5a5aaa; opacity: 1;}
+    25% { background-color: yellow; opacity: 0.3;}
+    50% { background-color: blue; opacity: 1;}
+    100% { background-color: chocolate; opacity: .3;}
+}
+.animation {
+    animation: blinken 1s infinite alternate;
+}
 
 @media screen and (max-width: 560px) {
     header {
