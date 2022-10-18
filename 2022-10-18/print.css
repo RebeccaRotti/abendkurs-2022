@@ -1,0 +1,15 @@
+img {
+    display: none;
+    visibility: hidden;
+}
+nav li a, nav a::after {
+    color: #FA1E16;
+}
+nav li {
+    flex: 0 0 100%;
+}
+header {
+    min-height: auto;
+    background: none;
+}
+.flex { display: block; }
