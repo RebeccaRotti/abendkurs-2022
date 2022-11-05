@@ -1,0 +1,199 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.flex {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Nav */
+nav li {
+    flex: 1 1 150px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+nav {
+    background-color: #000;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+nav a { color: #ffffff; }
+
+h1,  h2 { text-align: center; }
+header h1 { margin-top: 5%; }
+
+/* Slider */
+.mySlides {
+    display: none;
+    max-width: 100%;
+    margin: auto;
+    height: 60vh;
+}
+.slider { max-width: 100%; }
+
+/* Destinations */
+article {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+}
+.destination {
+    flex: 1 1 250px;
+    padding: 10px;
+    background-color: #a8d7c8;
+}
+.border {
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    box-shadow: 1px 1px 6px #646464;
+}
+.pt { padding-top: 5%; }
+@keyframes hovering {
+    from { transform: translate(0, 0px); }
+    50% { transform: translate(0, -15px); }
+    to { transform: translate(0, 0px); }
+}
+.destination h2 {
+    animation-name: hovering;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+main { margin: 15px; }
+h1::first-letter, h2::first-letter {
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 200%;
+}
+.top {
+    position: fixed;
+    right: 10px;
+    bottom: 0;
+    padding: 5px;
+}
+.top img {
+    max-width: 36px;
+    border-radius: 50%;
+    margin: -3px;
+    background-color: #fff;
+}
+/* Tabellenstyling */
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+table th, table td {
+    padding: .625em;
+    text-align: center;
+}
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+body, *::placeholder {
+    font-family: 'Dosis', sans-serif;
+}
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+/* Formular */
+.form {
+    max-width: 690px;
+    width: 100%;
+    margin: auto;
+    background-color: #c5c5c5;
+    padding: 5%;
+}
+.form div { padding: 15px 0; }
+.form input, .form textarea {
+    padding: 5px;
+    width: 100%;
+}
+.form .flex > * {
+    flex: 1 1 250px;
+}
+.form .flex {
+    justify-content: space-between;
+    align-items: center;
+}
+*::placeholder {
+    font-size: .8rem;
+    color: #602424;
+}
+.btn-send {
+   background-color: #000;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    display: block;
+    margin: 5px 0px 10px auto;
+}
+.btn-send:hover { background-color: #5a5aaa; }
+
+
+
+@media screen and (min-width: 600px) {
+    tr:nth-child(2n) {
+        background-color: #c5c5c5;
+    }
+}
+@media screen and (max-width: 600px) {
+    table { border: 0; }
+    table caption { font-size: 1.3em; }
+    table thead { display: none; }
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+

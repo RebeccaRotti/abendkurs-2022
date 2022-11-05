@@ -1,11 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul class="flex">
+                <li>
+                    <a href="#myDestination">Meine Destinationen</a>
+                </li>
+                <li>
+                    <a href="#clima">Klimatabellen</a>
+                </li>
+                <li>
+                    <a href="#contact">Kontakt</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>Meine Reisen</h1>
+        <div class="slider">
+            <img class="mySlides" src="img/aegypten.jpg" alt="Ägypten">
+            <img class="mySlides" src="img/thailand.jpg" alt="Thailand">
+            <img class="mySlides" src="img/maritius.jpg" alt="Mauritius">
+            <img class="mySlides" src="img/bali.jpg" alt="Bali">
+        </div>
+    </header>
 
+    <main>
+        <article class="pt" id="myDestination">
+            <div class="flex">
+                <section class="destination border">
+                    <h2>Ägypten</h2>
+                    <p>
+                        Ägypten (Aussprache [ɛˈɡʏptn̩] oder [ɛˈɡɪptn̩]; arabisch مصر Miṣr, offiziell Arabische Republik Ägypten) ist ein Staat im nordöstlichen Afrika mit mehr als 100 Millionen Einwohnern[7] und einer Fläche von mehr als einer Million Quadratkilometern. Die Megastadt Kairo ist ägyptische Hauptstadt und die größte Metropole Afrikas und Arabiens. Der Ballungsraum „Greater Cairo“ ist eine der bevölkerungsreichsten Stadtregionen der Erde. Weitere Millionenstädte des Landes sind Alexandria und Gizeh. Hinsichtlich der Wirtschaftsleistung beim BIP pro Kopf liegt Ägypten auf Platz 94 von 190 Ländern (2016, PPP).
+                    </p>
+                </section>
+                <section class="destination border">
+                    <h2>Thailand</h2>
+                    <p>
+                        Thailand (thailändisch ประเทศไทย [pratʰêːt tʰaj]), offiziell Königreich Thailand ( ราชอาณาจักรไทย?/i [râːt͡ɕʰáʔaːnaːt͡ɕàk tʰaj], umgangssprachlich: เมืองไทย?/i [mɯːaŋ tʰaj]), ist ein Staat in Südostasien. Er grenzt an Myanmar, Laos, Kambodscha, Malaysia, das Andamanische Meer (Teil des Indischen Ozeans) und den Golf von Thailand (Teil des Pazifischen Ozeans). Die Hauptstadt Thailands und mit Abstand größte Stadt des Landes ist Bangkok. Das Land ist de jure eine konstitutionelle Monarchie. König Bhumibol Adulyadej war von 1946 bis zu seinem Tod im Jahr 2016 Staatsoberhaupt. Seit 1. Dezember 2016 ist sein Sohn Maha Vajiralongkorn thailändischer König.
+                    </p>
+                </section>
+                <section class="destination border">
+                    <h2>Mauritius</h2>
+                    <p>
+                        Mauritius (deutsch [maʊ̯ˈriːtsi̯ʊs], englisch [məˈɹɪʃəs], französisch Maurice [moˈʀiːs], kreolisch Moris) ist ein Inselstaat im Südwesten des Indischen Ozeans ungefähr 870 Kilometer östlich von Madagaskar.
+                        Neben der Hauptinsel Mauritius mit der Hauptstadt Port Louis zählen Rodrigues, die Cargados-Carajos-Inseln sowie die Agalega-Inseln zum Staatsgebiet. Der Chagos-Archipel gehörte zum Staatsgebiet von Mauritius, wurde aber vom Vereinigten Königreich kurz vor der absehbaren Unabhängigkeit 1965 ausgegliedert.
+                    </p>
+                </section>
+                <section class="destination border">
+                    <h2>Bali</h2>
+                    <p>
+                        Bali gilt als die westlichste der Kleinen Sundainseln, zu denen noch die Inseln von Nusa Tenggara gehören, und ist vom westlich gelegenen Java durch die 2,5 km breite Bali-Straße getrennt. Bali liegt im Indischen Ozean zwischen Java und Lombok. Die Nord-Süd-Ausdehnung beträgt 95 km, von seiner Westspitze bis zur Ostspitze sind es 145 km.
+                        Die Provinz erstreckt sich zwischen 114º25′53″ und 115º42′40″ ö. L. sowie zwischen 08º03′40″ und 08º50′48″ s. Br.
+                        Bali gilt als eine relativ junge Insel. Vom malaiischen Festland ist die Insel nur durch drei verhältnismäßig flache Meeresstraßen getrennt.
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <article class="pt" id="clima">
+            <table>
+                <caption>Klimatabelle mit max Temperaturen</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Monate</th>
+                    <th scope="col">Ägypten</th>
+                    <th scope="col">Thailand</th>
+                    <th scope="col">Bali</th>
+                    <th scope="col">Mauritius</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Monat">Januar</td>
+                    <td data-label="Ägypten">24</td>
+                    <td data-label="Thailand">32</td>
+                    <td data-label="Bali">31</td>
+                    <td data-label="Mauritius">30</td>
+                </tr>
+                <tr>
+                    <td data-label="Monat">Februar</td>
+                    <td data-label="Ägypten">24</td>
+                    <td data-label="Thailand">33</td>
+                    <td data-label="Bali">31</td>
+                    <td data-label="Mauritius">30</td>
+                </tr>
+                <tr>
+                    <td data-label="Monat">März</td>
+                    <td data-label="Ägypten">25</td>
+                    <td data-label="Thailand">34</td>
+                    <td data-label="Bali">31</td>
+                    <td data-label="Mauritius">30</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+
+        <article class="pt" id="contact">
+            <section class="form border">
+                <h2>Kontaktanfrage</h2>
+                <form>
+                    <div class="flex">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Dein Name">
+                    </div>
+                    <div class="flex">
+                        <label for="mail">Mail</label>
+                        <input type="email" id="mail" name="mail" placeholder="Deine Mailadresse">
+                    </div>
+                    <div class="flex">
+                        <label for="message">Deine Nachricht</label>
+                        <textarea id="message" name="message" rows="10"
+                                  placeholder="Schreib mir was"></textarea>
+                    </div>
+                    <button type="button"class="btn-send">Absenden</button>
+                </form>
+            </section>
+        </article>
+
+    </main>
+    <a href="#top" class="top">
+        <img src="img/up-arrow.png" alt="To Top">
+    </a>
+<footer>
+    <p>&copy; 2022 Abendkurs</p>
+</footer>
+<script>
+    // Script für Slider
+    let myIndex = 0;
+
+    function carousel() {
+        let i;
+        let x = document.getElementsByClassName('mySlides');
+        // console.log(x);
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if(myIndex > x.length) { myIndex = 1; }
+        x[myIndex-1].style.display ='block';
+        setTimeout(carousel, 2000);
+    }
+
+    carousel();
+
+    // Script für Smooth Scrolling
+    let anchorSelector = 'a[href^="#"]';
+    let anchorList = document.querySelectorAll(anchorSelector);
+    //console.log(anchorList);
+    anchorList.forEach(link => {
+        link.onclick = function (e) {
+            e.preventDefault();
+            let destination = document.querySelector(this.hash);
+            //console.log(destination);
+            destination.scrollIntoView({
+                behavior: 'smooth',
+            })
+        }
+    });
+
+</script>
 </body>
 </html>
