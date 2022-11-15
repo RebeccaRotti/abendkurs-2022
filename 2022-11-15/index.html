@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Schere, Stein, Papier, Brunnen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <article class="rounds">
+        <div class="flex">
+            <label for="roundsCounter">Wie viele Runden willst du spielen?</label>
+            <input type="number" id="roundsCounter" name="roundsCounter">
+        </div>
+        <button class="gameover" onclick="setRound()">
+            Runden setzen
+        </button>
+    </article>
+
+    <article class="flex game none">
+        <button class="btn" onclick="game('Schere')">
+            <img src="img/Schere.png" class="imgFluid" alt="Schere">
+        </button>
+        <button class="btn" onclick="game('Stein')">
+            <img src="img/Stein.png" class="imgFluid" alt="Stein">
+        </button>
+        <button class="btn" onclick="game('Papier')">
+            <img src="img/Papier.png" class="imgFluid" alt="Papier">
+        </button>
+        <button class="btn" onclick="game('Brunnen')">
+            <img src="img/Brunnen.png" class="imgFluid" alt="Brunnen">
+        </button>
+    </article>
+    <article>
+        <div id="outputRounds" class="flex"></div>
+        <div id="output"></div>
+    </article>
+
+</main>
+
+<script src="logic.js"></script>
+</body>
+</html>
