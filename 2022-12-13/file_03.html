@@ -9,9 +9,9 @@
 
 <article>
     <script>
-        let zahl = window.prompt("Gib eine Zahl ein");
+        /*let zahl = window.prompt("Gib eine Zahl ein");
         window.alert('Eingegeben Zahl: ' + zahl);
-        let confirm = window.confirm('Eingabe Bestätigen?');
+        let confirm = window.confirm('Eingabe Bestätigen?');*/
         if(confirm) {
             document.write('Eingabe bestätigt');
         } else {
@@ -20,5 +20,64 @@
         }
     </script>
 </article>
+
+<article>
+    <button type="button" onclick="browser()">Drück mich</button>
+    <script>
+        function browser() {
+            let height = window.innerHeight;
+            let width = window.innerWidth;
+            alert('Höhe: ' + height + '\n' + 'Breite: ' + width);
+        }
+    </script>
+</article>
+
+<article>
+    <button onclick="setTime01()" type="button">Drück mich 02</button>
+    <script>
+        function message() {
+            alert('Du hast mich gedrückt');
+            setTimeout(message02, 2000);
+        }
+        function message02() {
+            alert('Du hast mich nicht mehr gedrückt');
+            setTimeout(message, 2000);
+        }
+        function setTime01() {
+            // setTimeout(message, 2000);
+        }
+    </script>
+</article>
+
+<article>
+    <button onclick="start()">Start mich</button>
+    <button onclick="stop()">Stop mich</button>
+    <script>
+        let toStop;
+        function play(){
+            alert('Button vor 5 Sek gedrückt');
+        }
+        function start() {
+            toStop = setTimeout(play, 5000);
+        }
+        function stop() {
+            clearTimeout(toStop);
+        }
+    </script>
+</article>
+
+<article>
+    <p id="insert"></p>
+    <script>
+        let i = 1;
+        function endless() {
+            insert.innerHTML += i + "<br>";
+            //document.write(i + '<br>');
+            i++;
+        }
+        setInterval(endless, 1000);
+    </script>
+</article>
+
 </body>
 </html>
