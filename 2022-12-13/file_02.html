@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung</title>
+</head>
+<body>
+
+<main>
+    <h2>3 Möglichkeiten für Events auf Elementen</h2>
+    <article>
+        <button type="button" onclick="alert('Button gedrückt')">Drück mich 01</button>
+    </article>
+    <article>
+        <button type="button" onclick="verdopplung()">Drück mich 02</button>
+        <script>
+            function verdopplung() {
+                let zahl = prompt('Gib eine Zahl ein');
+                zahl *= 2;
+                alert(zahl);
+            }
+        </script>
+    </article>
+    <article>
+        <button type="button" id="btn01">Drück mich 03</button>
+        <script>
+            function news() {
+                alert('Meldung');
+            }
+            btn01.addEventListener("click", news);
+        </script>
+    </article>
+
+    <h2>Onmouseover</h2>
+    <article>
+        <p>Absatz 1</p>
+        <p id="absatz">Absatz 2</p>
+        <p>Absatz 3</p>
+        <script>
+            // Auf einem Element kann nur ein Event drauf sein
+            // Variante 1
+            /*absatz.onmouseover = function () {
+                alert('Du hast den 2. Absatz gefunden');
+            }*/
+
+            // Variante 2
+            function manipulation() {
+                absatz.innerText = 'Du hast Absatz 2 unsittlich berührt';
+            }
+            /*absatz.onmouseover = manipulation;*/
+
+            // Variante 3
+            function stylingAbsatz() {
+                absatz.style.backgroundColor = 'red';
+                absatz.removeEventListener('mouseover', stylingAbsatz);
+                absatz.addEventListener('mouseover', removeStyling);
+            }
+            function removeStyling() {
+                absatz.style.backgroundColor = 'transparent';
+                absatz.removeEventListener('mouseover', removeStyling);
+                absatz.addEventListener('mouseover', stylingAbsatz);
+            }
+            absatz.addEventListener('mouseover', stylingAbsatz);
+        </script>
+    </article>
+    <article id="articleId" style="margin: 15px; padding: 15px;">
+        <section id="sectionId" style="margin: 15px; padding: 15px;">
+            <p id="paragraphId" style="margin: 15px; padding: 15px;">
+                ich bin ein Text <strong id="strongId">mit einem fetten Teil</strong>
+                mittendrin. Na sowas auch
+            </p>
+        </section>
+        <script>
+            function articleTag() {
+                alert("Artikel?");
+                event.stopPropagation();
+            }
+            function sectionTag() {
+                alert('Section');
+                event.stopPropagation();
+            }
+            function paragraphTag() {
+                alert('Paragraph');
+                event.stopPropagation();
+            }
+            function strongTag() {
+                alert('Strong');
+                event.stopPropagation();
+            }
+            articleId.onclick = articleTag;
+            sectionId.onclick = sectionTag;
+            paragraphId.onclick = paragraphTag;
+            strongId.onclick = strongTag;
+        </script>
+    </article>
+
+    <article>
+        <button type="button" id="multiEvents">Klick mich</button>
+        <script>
+            function click() {
+                alert('Klick Event');
+            }
+            function mouseDown() {
+                alert('Mouse Down Event');
+            }
+            function mouseUp() {
+                alert('Mouse Up Event');
+            }
+            multiEvents.onclick = click;
+            multiEvents.onmousedown = mouseDown;
+            multiEvents.onmouseup = mouseUp;
+        </script>
+    </article>
+
+    <article>
+        <input id="keyBsp" type="text">
+        <script>
+            function keyInput(e) {
+                alert('Key: ' + e.key + ' Code: ' + e.code);
+                console.log(e);
+            }
+            keyBsp.onkeypress = keyInput;
+        </script>
+    </article>
+
+
+
+
+
+</main>
+
+
+</body>
+</html>

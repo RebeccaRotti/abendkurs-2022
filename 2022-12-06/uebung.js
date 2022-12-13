@@ -2,17 +2,18 @@
 
 // alert("Hallo " + prompt("Gib deinen Namen ein") + " zum Abendkurs");
 
-document.write('Abendkurs: '    + typeof "Abendkurs" + '<br>');
-document.write('3.14: '         + typeof 3.14+ '<br>');
-document.write('7: '            + typeof 7 + '<br>');
-document.write('NaN: '          + typeof NaN + '<br>');
-document.write('false: '        + typeof false + '<br>');
-document.write('[1,2,3,4]: '    + typeof [1,2,3,4] + '<br>');
-document.write("{name:'John', age:34}: " + typeof {name:'John', age:34} + '<br>');
-document.write('new Date(): '   + typeof new Date() + '<br>');
-document.write('function(): '   + typeof function () {} + '<br>');
-document.write('myCar: '        + typeof myCar + '<br>');
-document.write('null: '         + typeof null + '<br>');
+document.write('Abendkurs: ' + typeof "Abendkurs" + '<br>');
+document.write('3.14: ' + typeof 3.14 + '<br>');
+document.write('7: ' + typeof 7 + '<br>');
+document.write('NaN: ' + typeof NaN + '<br>');
+document.write('false: ' + typeof false + '<br>');
+document.write('[1,2,3,4]: ' + typeof [1, 2, 3, 4] + '<br>');
+document.write("{name:'John', age:34}: " + typeof {name: 'John', age: 34} + '<br>');
+document.write('new Date(): ' + typeof new Date() + '<br>');
+document.write('function(): ' + typeof function () {
+} + '<br>');
+document.write('myCar: ' + typeof myCar + '<br>');
+document.write('null: ' + typeof null + '<br>');
 
 // Konstanten
 const meineKonstante = 'Ich bin ein String';
@@ -102,13 +103,14 @@ console.log(myMap);
 document.write('<br><br><hr><br><br>');
 
 
-const persons =  [
+const persons = [
     {firstname: "Andreas", lastname: "Muster"},
     {firstname: "Michaela", lastname: "Schwarz"},
     {firstname: "Jayne", lastname: "Cool"}
 ];
 console.log(persons);
 document.write(persons.map(getFullName));
+
 function getFullName(item) {
     return [item.firstname, item.lastname].join(" ");
 }
@@ -118,7 +120,7 @@ document.write('<br><br><hr><br><br>');
 // while
 let eingabe = Number(prompt("bis wohin willst du zählen"));
 let i = 1;
-while(i <= eingabe) {
+while (i <= eingabe) {
     document.write(i + '<br>');
     i++;
 }
@@ -127,14 +129,14 @@ document.write('<br><br><hr><br><br>');
 do {
     document.write(i + '<br>');
     i++;
-} while(i <= eingabe);
+} while (i <= eingabe);
 document.write('<br><br><hr><br><br>');
 for (let x = 1; x <= eingabe; x++) {
     document.write(x + '<br>');
 }
 document.write('<br><br><hr><br><br>');
 
-for(let value of myArray) {
+for (let value of myArray) {
     document.write(value + '<br>');
 }
 
@@ -147,17 +149,17 @@ for (let value of myMap) {
 
 document.write('<br><br><hr><br><br>');
 
-let arr = [2,5,8,10,15,19];
+let arr = [2, 5, 8, 10, 15, 19];
 let userInput = Number(prompt("Vergleichswert: "));
 let j = 0;
 for (let value of arr) {
-    if(value === userInput) {
+    if (value === userInput) {
         document.write("Der eingegebene Wert ist im Array vorhanden<br>");
         document.write("Durchläufe: " + (j + 1) + " waren notwendig");
         break;
     }
     j++;
 }
-if(j === arr.length) {
+if (j === arr.length) {
     document.write("Der Wert ist nicht enthalten");
 }

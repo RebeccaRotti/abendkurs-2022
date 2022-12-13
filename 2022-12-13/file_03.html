@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung</title>
+</head>
+<body>
+<h2>Window Objekt</h2>
+
+<article>
+    <script>
+        let zahl = window.prompt("Gib eine Zahl ein");
+        window.alert('Eingegeben Zahl: ' + zahl);
+        let confirm = window.confirm('Eingabe Bestätigen?');
+        if(confirm) {
+            document.write('Eingabe bestätigt');
+        } else {
+            document.write('Nicht bestätigt');
+            window.open('file_02.html');
+        }
+    </script>
+</article>
+</body>
+</html>
