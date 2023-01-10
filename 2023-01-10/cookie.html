@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="checkCookie()">
+<button type="button" onclick="setCookie('anwender', '', -1)">Cookie setzen</button>
+
+<script>
+    function setCookie(cookieName, inhalt, dauer) {
+        let datum = new Date();
+        datum.setTime(datum.getTime() + (dauer * 24 * 60 * 60 * 1000));
+        let ablaufdatum = "expires=" + datum.toUTCString();
+        document.cookie = cookieName + "=" + inhalt + ';';
+    }
+    function getCookie(cookieName) {
+        cookieName += "=";
+        let decCookie = decodeURIComponent(document.cookie);
+        console.log(decCookie);
+        let arr = decCookie.split(';');
+        for (let i = 0; i < arr.length; i++) {
+            let content = arr[i];
+            while(content.charAt(0) == ' ') {
+                content = content.substring(1);
+            }
+            if(content.indexOf(cookieName) == 0) {
+                return content.substring(cookieName.length);
+            }
+        }
+        return "";
+    }
+    function checkCookie() {
+        let user = getCookie('anwender');
+        if (user != '') {
+            alert('Hallo ' + user);
+        } else {
+            user = prompt('Gib deinen Namen ein');
+            if(user != '' && user != null) {
+                setCookie('anwender', user, 180);
+            }
+        }
+    }
+</script>
+</body>
+</html>

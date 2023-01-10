@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Substring</title>
+</head>
+<body>
+<p id="absatz"></p>
+<form method="GET">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="age" placeholder="Age">
+    <button type="submit">Send</button>
+</form>
+<script>
+    "use strict";
+    let str = location.search;
+    console.log(str);
+    str = str.substr(1);
+    console.log(str);
+    let arr = str.split('&');
+    console.log(arr);
+    for(let i = 0; i < arr.length; i++) {
+        arr[i] = arr[i].split('=');
+    }
+    let content = '';
+    for(let value of arr) {
+        content += value[0] + ': ' + value[1] + '<br>';
+    }
+    document.getElementById('absatz').innerHTML = content;
+    document.getElementById('absatz').style.background = 'red';
+    console.log(arr);
+</script>
+</body>
+</html>

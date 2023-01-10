@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localStorage</title>
+</head>
+<body>
+<input id="bezeichnung" type="text" placeholder="bezeichnung">
+<input id="inhalt" type="text" placeholder="inhalt">
+<button type="button" onclick="save()">Speichern</button>
+<button type="button" onclick="output()">Ausgabe</button>
+<button type="button" onclick="remove()">Löschen</button>
+<p id="ausgabe"></p>
+<script>
+    function save() {
+        let bez = document.getElementById('bezeichnung').value;
+        let content = document.getElementById('inhalt').value;
+        localStorage.setItem(bez, content);
+    }
+    function output() {
+        let output = "";
+        for(let wert in localStorage) {
+            output += wert + ': ' + localStorage.getItem(wert);
+            output += '<br>';
+        }
+        document.getElementById('ausgabe').innerHTML = output;
+    }
+    function remove() {
+        localStorage.clear();
+    }
+</script>
+</body>
+</html>

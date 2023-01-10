@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOP</title>
+</head>
+<body>
+<script>
+    // Möglichkeit 1
+    "use strict";
+    /*let kaffeemaschine = new Object();
+    kaffeemaschine.Farbe = "schwarz";
+    kaffeemaschine.Verbrauch = 500;
+    kaffeemaschine["max. Menge"] = 0.5;
+
+    console.log(kaffeemaschine);
+    for (let i in kaffeemaschine) {
+        document.write(i + ": " + kaffeemaschine[i] + "<br>");
+    }*/
+
+    // Konstruktur
+    /*function kaffeemaschine2(farbe, preis, verbrauch, typ) {
+        this.Farbe = farbe;
+        this.Preis = preis;
+        this.Verbrauch = verbrauch;
+        this.Typ = typ;
+    }
+    let meinekaffeemaschine2 = new kaffeemaschine2("silber", 39.99, 600, "Vollautomat");
+    for (let i in meinekaffeemaschine2) {
+        document.write(i + ": " + meinekaffeemaschine2[i] + "<br>");
+    }*/
+
+    // Vererbung durch Prototypen
+    /*function eGeraete(farbe2, preis, verbrauch) {
+        this.Farbe = farbe2;
+        this.Preis = preis;
+        this.Verbrauch = verbrauch;
+    }
+    function Kaffeemaschine(farbe, preis, verbrauch, typ) {
+        this.Typ = typ;
+        this.base = eGeraete;
+        this.base(farbe, preis, verbrauch);
+    }
+    Kaffeemaschine.prototype = new eGeraete;
+    */
+
+    // Klassen in JavaScript
+    /*class eGeraete {
+        constructor(farbe, preis, verbrauch) {
+            this.Farbe = farbe;
+            this.Preis = preis;
+            this.Verbrauch = verbrauch;
+        }
+    }
+    class Kaffeemaschine extends eGeraete {
+        constructor(farbe, preis, verbrauch, typ) {
+            super(farbe, preis, verbrauch);
+            this.Typ = typ;
+        }
+    }*/
+
+    // Methoden erstellen und anwenden
+    function Rabatt(wert) {
+        this.Preis *= 1 - wert / 100;
+    }
+    function Kaffeemaschine(farbe, preis, verbrauch, typ) {
+        this.Farbe = farbe;
+        this.Preis = preis;
+        this.Verbrauch = verbrauch;
+        this.Typ = typ;
+        this.Rabatt = Rabatt;
+    }
+    let meineKaffeemaschine = new Kaffeemaschine("silber", 39.99, 600, "Vollautomat");
+    meineKaffeemaschine.Rabatt(10);
+
+    console.log(meineKaffeemaschine);
+    for (let i in meineKaffeemaschine) {
+        document.write(i + ": " + meineKaffeemaschine[i] + '<br>');
+    }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

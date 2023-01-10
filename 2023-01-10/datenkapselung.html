@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datenkapselung</title>
+</head>
+<body>
+    <input type="text" id="Farbe" name="Farbe" placeholder="Farbe">
+    <input type="text" id="Preis" name="Preis" placeholder="Preis">
+    <input type="number" id="Verbrauch" name="Verbrauch" placeholder="Verbrauch">
+    <button type="button" onclick="example()">Eingabe</button>
+    <script>
+    "use strict";
+    class Kaffeemaschine {
+        constructor(farbe, preis, verbrauch) {
+            this._Farbe= farbe;
+            this._Preis = preis;
+            this._Verbrauch = verbrauch;
+        }
+        get Farbe() {
+            return this._Farbe;
+        }
+        get Preis() {
+            return this._Preis;
+        }
+        get Verbrauch() {
+            return this._Verbrauch;
+        }
+        set Farbe(wert) {
+            this._Farbe = wert;
+        }
+        set Preis(wert) {
+            if (!isNaN(wert) && wert >= 0) {
+                this._Preis = wert;
+            } else {
+                document.write("Der Preis darf nicht negativ sein");
+            }
+        }
+        set Verbrauch(wert) {
+            this._Verbrauch = wert;
+        }
+    }
+
+    function example() {
+        let color = document.querySelector('#Farbe').value;
+        let price = document.querySelector('#Preis').value;
+        let consum = document.querySelector('#Verbrauch').value;
+
+        let meineKaffeemaschine = new Kaffeemaschine(color, price, consum);
+        document.write('Farbe: ' + meineKaffeemaschine.Farbe + '<br>');
+        document.write('Preis: ' + meineKaffeemaschine.Preis + '<br>');
+        document.write('Verbrauch: ' + meineKaffeemaschine.Verbrauch);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulare Bearbeiten</title>
+</head>
+<body>
+    <form name="formular01">
+        <input id="feld1">
+        <input id="Mail" placeholder="Mail">
+        <input id="Alter" placeholder="Alter">
+        <button id="button" type="button">Eingabe</button>
+    </form>
+    <script>
+
+        function formular01() {
+            if(feld1.value == "") {
+                alert('Gib einen wert ein');
+            }
+            if(!Mail.value.includes('@')) {
+                alert("Gib eine Mailadresse ein");
+                Mail.focus();
+            }
+            console.log(Alter.value);
+            let alter = Number(Alter.value);
+            if(isNaN(alter) || Alter.value == '') {
+                alert('Gib ein Alter ein');
+            }
+        }
+        button.onclick = formular01;
+
+    </script>
+</body>
+</html>
