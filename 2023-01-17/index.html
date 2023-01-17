@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        article {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            flex: 0 0 32%;
+            height: 50px;
+            background-color: #5a5aaa;
+        }
+    </style>
+</head>
+<body>
+<!-- BSP Flex Box -->
+    <!--<article>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+    </article>-->
+
+    <h1 class="headline">Headline 1</h1>
+    <h2 class="headline">Headline 2</h2>
+    <p id="paragraph"></p>
+
+    <p>Paragraph Beispiel</p>
+    <p class="red first">Paragraph Beispiel</p>
+    <p>Paragraph Beispiel</p>
+    <p class="red second">Paragraph Beispiel</p>
+
+    <input name="userInput" type="text">
+
+    <div style="padding: 25px 0;">
+        <button onclick="hide()" type="button">Hide</button>
+        <button onclick="show()" type="button">Show</button>
+        <button class="toggle" type="button">Toggle</button>
+        <button class="fadeToggle" type="button">Fade Toggle</button>
+        <button class="animate" type="button">Animate</button>
+    </div>
+    <div id="rectangle" style="background-color: #ee9900; height: 200px; width: 200px"></div>
+    <p id="output"></p>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>-->
+<script src="script.js"></script>
+</body>
+</html>
