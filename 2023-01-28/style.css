@@ -1,0 +1,30 @@
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 10px;
+}
+.flex > * {
+    flex: 1 1 250px;
+}
+.flex .checkboxen, .flex .radio {
+    display: flex;
+}
+input, textarea {
+    padding: 5px;
+    border: 1px solid #8b8888;
+    box-shadow: 1px 1px 1px inset #444444;
+}
+form {
+    max-width: 960px;
+    margin: auto;
+}
+.btn {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+.btn-send {
+    background-color: #85a05a;
+}
+.btn-cancel {
+    background-color: #d8a7a7;
+}
