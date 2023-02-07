@@ -1,6 +1,9 @@
-<?php  ?>
+<?php require_once('./controller/Register.php'); ?>
 <?php
-
+    $Register = new Register();
+    $Response = [];
+    $active = $Register->active;
+    if(isset($_POST) && count($_POST) > 0) $Response = $Register->register($_POST);
 ?>
 <?php require('inc/nav.php'); ?>
 <main role="main" class="container pt-5">

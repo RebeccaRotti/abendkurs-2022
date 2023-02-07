@@ -24,7 +24,8 @@ class Login extends Controller {
    * Instanz der Klasse LoginModel, die an die private Dateneigenschaft $loginModel übergeben wird.
    */
   public function __construct() {
-
+      if(isset($_SESSION['auth_status'])) header("Location: dashboard.php");
+      $this->loginModel = new LoginModel();
   }
 
   /**
@@ -38,7 +39,34 @@ class Login extends Controller {
    * ein Array und gibt ein Array zurück, wenn die Authentifizierung des Benutzers fehlschlägt, andernfalls wird ein Http Redirect zurückgegeben.
   */
   public function login(array $data) {
+      $email = stripcslashes(strip_tags($data['email']));
+      $password = stripcslashes(strip_tags($data['password']));
 
+      $EmailRecords = $this->loginModel->fetchEmail($email);
+
+      if(!$EmailRecords['status']) {
+          //___
+          if(password_verify($password, $EmailRecords['data']['password'])) {
+            $Response = array(
+                'status' => true
+            );
+
+            $_SESSION['data'] = $EmailRecords['data'];
+            $_SESSION['auth_status'] = true;
+            header("Location: dashboard.php");
+          }
+          //___
+
+          $Response = array(
+              'status' => false
+          );
+          return $Response;
+      }
+
+      $Response = array(
+          'status' => false
+      );
+      return $Response;
   }
 }
  ?>

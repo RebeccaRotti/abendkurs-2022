@@ -1,9 +1,13 @@
-<?php  ?>
+<?php require_once('./controller/Login.php') ?>
 <?php
-
+    $Login = new Login();
+    $Response = [];
+    $active = $Login->active;
+    if(isset($_POST) && count($_POST) > 0) $Response = $Login->login($_POST);
 ?>
   <?php require('inc/nav.php'); ?>
     <main role="main" class="container pt-5">
+
         <div class="row justify-content-center mt-5">
           <div class="col-xs-12 col-xl-6 center-align center-block">
             <?php if (isset($Response['status']) && !$Response['status']) : ?>

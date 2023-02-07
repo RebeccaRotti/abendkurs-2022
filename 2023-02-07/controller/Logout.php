@@ -12,7 +12,8 @@
       * @desc Destroys the application session and redirects to the login page...
     **/
     public function __construct() {
-
+        session_destroy();
+        header("Location: index.php");
     }
   }
  ?>

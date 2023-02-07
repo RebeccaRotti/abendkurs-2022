@@ -1,4 +1,6 @@
 <?php
+session_start();
+class Controller {  }
 
 /*
  * Diese Datei dient als Basis-Controller für andere Controller im Controller-Ordner, da dies die Wiederverwendung von
@@ -7,3 +9,4 @@
  * Klassen oder Controllern, die den Controller erweitern, genutzt werden.
  * */
 ?>
+
