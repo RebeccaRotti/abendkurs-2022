@@ -13,6 +13,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav ml-auto">
+
             <?php if (!isset($_SESSION['auth_status'])) : ?>
               <li class="nav-item">
                 <a class="nav-link" href="<?php echo BASE_URL; ?>index.php">Login</a>
@@ -27,9 +28,14 @@
             <?php endif; ?>
             <?php if (isset($_SESSION['auth_status'])) : ?>
               <li class="nav-item">
-                <a class="nav-link" href="<?php echo BASE_URL; ?>logout.php">Logout</a>
+                <a class="nav-link" href="<?php echo BASE_URL; ?>todo.php">ToDo</a>
               </li>
             <?php endif; ?>
+              <?php if (isset($_SESSION['auth_status'])) : ?>
+                  <li class="nav-item">
+                      <a class="nav-link" href="<?php echo BASE_URL; ?>logout.php">Logout</a>
+                  </li>
+              <?php endif; ?>
           </ul>
         </div>
       </div>
