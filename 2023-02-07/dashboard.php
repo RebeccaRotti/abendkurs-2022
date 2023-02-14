@@ -3,7 +3,7 @@
 require_once('controller/Controller.php');
 require('./inc/nav.php');
 ?>
-<main class="container py-4 mt-5">
+<main class="container py-4 mt-5 bg-light">
 
     <form method="post" action="logic/logicInsert.php" class="mb-4">
         <div class="mb-3">

@@ -1,6 +1,6 @@
 <?php
 
-function helper($Response) {
+function todoHelper($Response) {
     if (!$Response['status']) {
         $Response['status'] = 'Sorry, An unexpected error occurred and your request could not be completed.';
         return $Response;

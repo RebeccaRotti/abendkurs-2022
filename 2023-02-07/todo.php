@@ -1,13 +1,29 @@
 <?php require_once('./controller/ToDo.php'); ?>
 <?php
-// ToDo
+$ToDo = new ToDo();
+$Response = [];
+$active = $ToDo->active;
+if(isset($_POST) && isset($_POST['entry'])) {
+    $Response = $ToDo->updateEntry($_POST);
+    $_POST = array();
+}
+if(isset($_POST) && isset($_POST['delete'])) {
+    $Response = $ToDo->deleteEntry($_POST['delete']);
+    $_POST = array();
+}
+if(isset($_POST) && isset($_POST['newEntry'])) {
+    $Response = $ToDo->newEntry($_POST);
+    $_POST = array();
+}
+
+$ToDo = $ToDo->getToDo();
 ?>
 <?php
 require('./inc/nav.php');
 ?>
-<main class="container py-4 mt-5">
+<main class="container py-4 mt-5 bg-light">
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="mb-4">
-        <input type="hidden" name="update" value="1">
+        <input type="hidden" name="newEntry" value="1">
         <h4 class="h3 mb-3 font-weight-normal text-center">ToDos</h4>
         <div class="col-12 mt-4">
             <div class="form-group">
@@ -104,7 +120,22 @@ include_once ('./inc/script.inc.php');
 ?>
 <script>
     function editData(id) {
-
+        let myModal = new bootstrap.Modal(document.getElementById('editModal'));
+        const URL = 'todoEdit.php?id='+id;
+        console.log(URL);
+        let fetchData = {
+            method: 'GET'
+        }
+        fetch(URL, fetchData)
+            .then(response => response.json())
+            .then(function(hurra) {
+                console.log(hurra);
+                document.querySelector('#entry').value = hurra.data[0].id;
+                document.querySelector('#editHeadline').value = hurra.data[0].headline;
+                document.querySelector('#editDescription').innerText = hurra.data[0].description;
+                myModal.toggle();
+            });
+        //e.preventDefault();
     }
 </script>
 

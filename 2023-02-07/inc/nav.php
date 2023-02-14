@@ -4,7 +4,7 @@
     <?php
     include_once ('head.inc.php')
     ?>
-  <body>
+  <body class="bg-dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">PHP Übung</a>
