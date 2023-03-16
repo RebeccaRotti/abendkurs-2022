@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>erste Canvas Übung</title>
+    <style>
+        canvas {
+            border: 1px solid #adadad;
+            box-shadow: 1px 1px 3px #676767;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        // Get the canvas element and its context
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+
+        // Set the initial position
+        let x = 50;
+        let y = 50;
+        let vx = 0;
+        let vy = 0;
+
+        // Set the maximum velocity of the square
+        let maxVelocity = 10;
+
+        // set the fricition coefficient
+        let friction = 0.95;
+
+        // Draw square at current position
+        function drawSquare() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#4f8f95";
+            ctx.fillRect(x, y, 50, 50);
+        }
+
+        function updatePosition() {
+            // Apply friction to slow down the square over time
+            vx *= friction;
+            vy *= friction;
+
+            // Update the position of the square
+            x += vx;
+            y += vy;
+
+            // Keep the square within the bounds of the canvas
+            if(x < 0) {
+                x = 0;
+                vx = -vx;
+            } else if(x > canvas.width - 50) {
+                x = canvas.width - 50;
+                vx = -vx;
+            }
+            if(y < 0) {
+                y = 0;
+                vy = -vy;
+            } else if (y > canvas.height - 50) {
+                y = canvas.height - 50;
+                vy = -vy;
+            }
+        }
+
+        function moveSquare(event) {
+            switch (event.keyCode) {
+                case 37: // left arrow
+                    vx -= 1;
+                    break;
+                case 38: // up arrow
+                    vy -= 1;
+                    break;
+                case 39: // right arrow
+                    vx += 1;
+                    break;
+                case 40: // down arrow
+                    vy += 1;
+                    break;
+            }
+            // Limit the velocity of the square
+            if(vx > maxVelocity) {
+                vx = maxVelocity;
+            } else if(vx < -maxVelocity) {
+                vx = -maxVelocity;
+            }
+            if(vy > maxVelocity) {
+                vy = maxVelocity;
+            } else if (vy < -maxVelocity) {
+                vy = -maxVelocity;
+            }
+        }
+        document.addEventListener("keydown", moveSquare, false);
+
+        // Update the position of the square and redraw it at a constant interval
+        setInterval(function () {
+            updatePosition();
+            drawSquare();
+        }, 10);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

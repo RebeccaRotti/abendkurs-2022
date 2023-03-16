@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zweite Canvas Übung</title>
+    <style>
+        canvas {
+            border: 1px solid #adadad;
+            box-shadow: 1px 1px 3px #676767;
+        }
+        button {
+            border: none;
+            background: #000;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <button onclick="">Clear</button>
+    <button onclick="">Save</button>
+
+    <script>
+        // Get the canvas element and its context
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext('2d');
+        // set the size of each pixel
+        let pixelSize = 10;
+        // set the initial color of the pixel
+        let color = "#456e63";
+
+        // Draw a pixel at the specified location with the current color
+        function drawPixel(x, y) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x * pixelSize, y * pixelSize, pixelSize, pixelSize);
+        }
+        // Handle Mouse clicks on the canvas
+        function handleMouseDown(event) {
+            // Calculate the pixel coordinates based on the mouse position
+            let x = Math.floor(event.offsetX / pixelSize);
+            let y = Math.floor(event.offsetY / pixelSize);
+
+            // draw a pixel an the clicked location
+            drawPixel(x, y);
+        }
+        // Clear the canvas by filling it with white
+        function clearCanvas() {
+            ctx.fillStyle = "#FFF";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        // Save the canvas as an image
+        function saveCanvas() {
+            // Create a new image element and set its source to the canvas data url
+            let img = new Image();
+            img.src = canvas.toDataURL("image/png");
+
+            // Open image in a new Tab
+            let win = window.open();
+            win.document.write(`<img src="${img.src}" />`);
+        }
+
+        // Listen for mouse clicks on canvas
+        canvas.addEventListener("mousedown", handleMouseDown, false);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
