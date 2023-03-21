@@ -1,0 +1,42 @@
+.boxStyling {
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #a8a8a8;
+    margin: 10px auto;
+    padding: 10px;
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+button {
+    background-color: #434343;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+main {
+    max-width: 960px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+}
+.flex > * {
+    flex: 1 1 450px;
+}
+.flex input {
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+

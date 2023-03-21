@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Exercise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Exercise with Objects</h1>
+</header>
+<main>
+    <article class="boxStyling">
+        <section class="flex">
+            <div>
+                <h2>Show Object without input</h2>
+                <button type="button" id="catObject">Show</button>
+            </div>
+            <p id="objectOutput"></p>
+        </section>
+    </article>
+    <article>
+        <div class="boxStyling">
+            <h2>Exercise with Input</h2>
+            <section>
+                <form>
+                    <div class="flex">
+                        <label for="name">Name der Katze</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="flex">
+                        <label for="breed">Katzenrasse</label>
+                        <input type="text" id="breed" required>
+                    </div>
+                    <div class="flex">
+                        <label for="age">Alter</label>
+                        <input type="number" id="age" required>
+                    </div>
+                    <div class="flex">
+                        <label for="birth">Geboren am</label>
+                        <input type="date" id="birth" required>
+                    </div>
+                    <button type="button" id="newCatConstructor">
+                        Cat with Constructor
+                    </button>
+                    <button type="button" id="newCatClass">
+                        Cat with Class
+                    </button>
+                </form>
+            </section>
+        </div>
+        <section class="boxStyling">
+            <h2>Jüngste & Älteste</h2>
+            <div class="flex" id="outputAge"></div>
+        </section>
+
+        <section class="boxStyling">
+            <h2>Ausgabe</h2>
+            <div class="flex" id="output"></div>
+        </section>
+    </article>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
