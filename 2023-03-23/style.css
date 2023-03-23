@@ -1,0 +1,29 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.flex section {
+    flex: 1 1 250px;
+}
+section img {
+    max-width: 100%;
+}
+#pagination > a, .form button {
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border: 0;
+}
+main {
+    max-width: 960px;
+    margin: auto;
+    padding: 20px;
+}
+.form {
+    padding: 20px 0;
+}
+.form input {
+    padding: 10px;
+}
