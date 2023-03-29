@@ -51,6 +51,7 @@ function getMovies(searchTerm, page) {
     fetch(url)
         .then(response => response.json())
         .then((response) => {
+            console.table(response);
             const movies = response.Search || [];
             const totalPages = Math.ceil(response.totalResults / 10) || 0;
             displayMovies(movies);
