@@ -23,9 +23,12 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::post('addStory', [PageController::class, 'addStory'])->name('addStory');
+    Route::post('editStory', [PageController::class, 'editStory'])->name('editStory');
+    Route::get('/showStory/{storyId}', [PageController::class, 'showStory'])->name('showStory');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
 require __DIR__.'/auth.php';

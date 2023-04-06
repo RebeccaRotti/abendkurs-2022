@@ -90,4 +90,25 @@
             @endforeach
         </div>
     </div>
+    @section('script')
+        <script>
+            $('.edit').each(function () {
+               $(this).click(function () {
+                  let storyId = $(this).data('id');
+
+                  $.ajax({
+                      method: 'GET',
+                      url: '/showStory/' + storyId,
+                      success: function (data) {
+                          $('#modalContainer').html(data);
+                          $('#editStory').modal('show');
+                      },
+                      error: function (data) {
+                          console.log(data);
+                      }
+                  });
+               });
+            });
+        </script>
+    @endsection
 </x-app-layout>

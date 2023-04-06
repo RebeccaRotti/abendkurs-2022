@@ -41,7 +41,19 @@ class PageController extends Controller
                 $new->stories()->attach($rel);
             }
         }
-        dd($request);
+        // dd($request);
         return back()->with('success', 'saved');
+    }
+
+    public function showStory(Request $request) {
+        $story = Story::findOrFail($request->storyId);
+        return view('modals.editStory')->with([
+            'entry' => $story,
+            'stories' => Story::get()
+        ]);
+    }
+
+    public function editStory(Request $request) {
+        // ToDo
     }
 }

@@ -33,4 +33,9 @@ class Story extends Model
         );
     }
 
+    public function hasStory($rel) {
+        return $this->related->contains($rel);
+    }
+
+
 }

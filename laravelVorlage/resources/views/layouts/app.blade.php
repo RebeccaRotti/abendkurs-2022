@@ -28,7 +28,10 @@
             <main class="container-fluid">
                 {{ $slot }}
             </main>
+            <div id="modalContainer"></div>
             <script src="{{url('bootstrap.js') }}"></script>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+            @yield('script')
         </div>
     </body>
 </html>
