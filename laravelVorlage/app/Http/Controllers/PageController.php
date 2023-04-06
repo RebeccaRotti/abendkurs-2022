@@ -54,6 +54,39 @@ class PageController extends Controller
     }
 
     public function editStory(Request $request) {
-        // ToDo
+        $request->validate([
+            'editHeadline' => 'max:255|required',
+            'editStory' => 'required',
+            'editBackground' => 'sometimes|required|max:2000|mimes:jpg,jpeg,png'
+        ]);
+
+        $new = Story::findOrFail($request->storyId);
+        if($request->editBackground) {
+
+            if($new->background && file_exists(public_path('uploads/' . $new->background))) {
+                unlink(public_path('uploads/' . $new->background));
+            }
+
+            $stories = Story::orderBy('created_at', 'desc')->first();
+            if($stories)$unique = $stories->id + 1;
+            else $unique = 1;
+            $destination = 'uploads';
+            $backgroundImg = $unique . '-' . $request->editBackground->getClientOriginalName();
+            $request->editBackground->move(public_path($destination), $backgroundImg);
+        }
+
+        $new->headline = $request->editHeadline;
+        $new->story = $request->editStory;
+        $new->background = $backgroundImg ?? $new->background;
+        $new->save();
+
+        $new->stories()->detach();
+        if($request->relation) {
+            foreach ($request->relation as $rel) {
+                $new->stories()->attach($rel);
+            }
+        }
+        // dd($request);
+        return back()->with('success', 'saved');
     }
 }

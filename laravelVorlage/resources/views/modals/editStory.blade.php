@@ -8,6 +8,7 @@
             </div>
             <form method="POST" enctype="multipart/form-data" action="{{ url('editStory') }}">
                 @csrf
+                <input type="hidden" name="storyId" value="{{ $entry->id }}">
                 <div class="modal-body">
                     {{-- Input Text --}}
                     <div class="form-floating mb-3">
