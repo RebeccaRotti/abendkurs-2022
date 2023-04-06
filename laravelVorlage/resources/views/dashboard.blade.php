@@ -5,11 +5,15 @@
         </h2>
     </x-slot>
 
-    <a href="{{ url('story/0') }}">zur Story</a>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStory">
-        Add Story
-    </button>
+    <div class="d-flex justify-content-around">
+        @if(count($stories) > 0)
+        <a class="btn btn-outline-dark" href="{{ url('story/0') }}">show Story</a>
+        @endif
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addStory">
+            Add Story
+        </button>
+    </div>
 
     <!-- Modal -->
     <div class="modal fade" id="addStory" tabindex="-1" aria-labelledby="addStoryLabel" aria-hidden="true">
@@ -38,7 +42,7 @@
                             <input class="form-control" type="file" name="addBackground" id="formFile">
                         </div>
 
-                        <div class="d-flex">
+                        <div class="p-3 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
                             @foreach($stories as $story)
                                 <div class="form-check">
                                     <input class="form-check-input" name="relation[]" type="checkbox" value="{{ $story->id }}" id="flexCheck">
@@ -62,7 +66,7 @@
 
 
     <div class="p-4">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
             @foreach($stories as $story)
                 <div class="col">
                     <div class="card">
@@ -82,8 +86,9 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="card-footer">
+                        <div class="card-footer d-flex justify-content-between">
                             <button type="button" class="btn btn-dark edit" data-id="{{ $story->id }}">Edit</button>
+                            <button type="button" class="btn btn-danger delete" data-id="{{ $story->id }}">Delete</button>
                         </div>
 
                     </div>
@@ -109,6 +114,24 @@
                       }
                   });
                });
+            });
+
+            $('.delete').each(function () {
+                $(this).click(function () {
+                    let storyId = $(this).data('id');
+
+                    $.ajax({
+                        method: 'GET',
+                        url: '/showDeleteStory/' + storyId,
+                        success: function (data) {
+                            $('#modalContainer').html(data);
+                            $('#deleteStory').modal('show');
+                        },
+                        error: function (data) {
+                            console.log(data);
+                        }
+                    });
+                });
             });
         </script>
     @endsection

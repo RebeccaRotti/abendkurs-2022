@@ -23,7 +23,21 @@
                     </div>
                 </header>
             @endif
-
+                @if($errors->any())
+                    <div class="alert alert-danger p-4 text-center">
+                        <ul class="list-none">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                @if(session()->has('success'))
+                    <div class="alert alert-success text-center p-4" id="info">{{ session()->get('success') }}</div>
+                @endif
+                @if(session()->has('wrong'))
+                    <div class="alert alert-warning p-4 text-center">{{ session()->get('wrong') }}</div>
+                @endif
             <!-- Page Content -->
             <main class="container-fluid">
                 {{ $slot }}

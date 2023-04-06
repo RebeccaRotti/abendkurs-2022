@@ -100,4 +100,26 @@ class PageController extends Controller
             'story' => $story
         ]);
     }
+
+
+    public function showDeleteStory(Request $request) {
+        //dd($request);
+        $story = Story::findOrFail($request->storyId);
+        return view('modals.deleteStory')->with([
+            'story' => $story
+        ]);
+    }
+
+    public function deleteStory(Request $request) {
+        //dd($request);
+        $delete = Story::findOrFail($request->storyId);
+        if($delete->background && file_exists(public_path('uploads/' . $delete->background))) {
+            unlink(public_path('uploads/' . $delete->background));
+        }
+        $delete->stories()->detach();
+        $delete->delete();
+
+
+        return back()->with('wrong', 'deleted');
+    }
 }

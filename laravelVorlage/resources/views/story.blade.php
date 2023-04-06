@@ -1,18 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="py-4 text-center">
+        <h2 class="py-4 text-center bg-light">
             {{ $story->headline }}
         </h2>
     </x-slot>
     <style>
-        article {
+        body {
             background-image: url("{{ asset('uploads/' . $story->background) }}");
-            min-height: 90vh;
             background-size: cover;
         }
     </style>
-    <article class="d-flex justify-content-center align-items-center">
-        <div class="card bg-light">
+    <article class="mt-5 pt-5 d-flex justify-content-center align-items-center">
+        <div class="container card bg-light">
             <div class="card-body">
                 <p class="card-text">{{ $story->story }}</p>
             </div>

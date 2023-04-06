@@ -21,12 +21,12 @@
                         <label for="floatingTextarea">Story</label>
                     </div>
                     {{-- Input File--}}
-                    <div class="mb-3">
+                    <div class="my-3">
                         <label for="formFile" class="form-label">Background</label>
                         <input class="form-control" type="file" name="editBackground" id="formFile">
                     </div>
 
-                    <div class="d-flex">
+                    <div class="p-3 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
                         @foreach($stories as $story)
                             <div class="form-check">
                                 <input class="form-check-input" name="relation[]" type="checkbox" value="{{ $story->id }}" id="flexCheck"
