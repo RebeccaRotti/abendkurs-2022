@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+    <a href="{{ url('story/0') }}">zur Story</a>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStory">
         Add Story

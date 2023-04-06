@@ -89,4 +89,15 @@ class PageController extends Controller
         // dd($request);
         return back()->with('success', 'saved');
     }
+
+    public function story($storyId) {
+        if($storyId == 0) {
+            $story = Story::first();
+        } else {
+            $story = Story::findOrFail($storyId);
+        }
+        return view('story')->with([
+            'story' => $story
+        ]);
+    }
 }
